@@ -12,6 +12,9 @@ const amendHostURL = (imageURL) => {
 };
 app.use(express.static(`${__dirname}/public`));
 
+app.get("/", (req, res) => {
+  res.status(200).send("Hello From Server");
+});
 app.get("/api/v1/products", (req, res) => {
   const allProducts = products.map((product) => ({
     ...product,
